@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Product details from Nutrelle.">
+    <title>Product | Nutrelle</title>
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23064e3b'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23e5d09a'%3EN%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="nav">
+        <div class="wrap navwrap"><a class="brand" href="index.html#home"><span
+                    class="brand-mark">N</span><span>NUTRELLE<small>DISCOVER · EXPLORE · CONNECT</small></span></a>
+            <nav class="navlinks"><a href="index.html#home">Home</a><a href="index.html#products">All Products</a><a
+                    href="index.html#launches">New Launches</a><a href="index.html#about">About Nutrelle</a><a
+                    href="index.html#contact">Contact</a></nav>
+            <div class="navright"><a class="btn outline" href="index.html#products">Explore Products ↗</a><button
+                    class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button></div>
+        </div>
+    </header>
+    <nav class="mobile-menu" id="mobileMenu"><a href="index.html#home">Home</a><a href="index.html#products">All
+            Products</a><a href="index.html#launches">New Launches</a><a href="index.html#about">About Nutrelle</a><a
+            href="index.html#contact">Contact</a></nav>
+    <main>
+        <section class="pd-section">
+            <div class="wrap"><a class="pd-back" href="index.html#products">← Back to all products</a>
+                <div id="pdRoot">
+                    <div class="empty">Loading product…</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="wrap footer-grid">
+            <div class="foot-brand"><a class="brand" href="index.html#home"><span
+                        class="brand-mark">N</span><span>NUTRELLE<small>DISCOVER · EXPLORE · CONNECT</small></span></a>
+                <p>A home for our latest launches, product stories and detailed product information.</p>
+            </div>
+            <nav class="foot-col" aria-label="Footer navigation">
+                <h4>Explore</h4><a href="index.html#home">Home</a><a href="index.html#products">All Products</a><a
+                    href="index.html#launches">New Launches</a><a href="index.html#about">About Nutrelle</a><a
+                    href="index.html#contact">Contact</a>
+            </nav>
+            <div class="foot-col">
+                <h4>Connect with us</h4>
+                <div id="footLinks"></div>
+            </div>
+        </div>
+        <div class="foot-bottom">
+            <div class="wrap foot-bottom-row"><small>© <span id="year"></span> Nutrelle. All rights
+                    reserved.</small><small>Product information subject to confirmation.</small></div>
+        </div>
+    </footer>
+    <a class="wa-fab" id="waFab" href="#" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"
+        hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.1A8.5 8.5 0 1 1 21 11.5Z" />
+            <path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2.2-1-.9.8c-.9-.4-1.9-1.4-2.3-2.3l.8-.9-1-2.2L9 8.5Z" />
+        </svg></a>
+    <script src="config.js"></script>
+    <script>
+        (function () {
+            const CFG = window.NUTRELLE_CONFIG || {};
+            const $ = id => document.getElementById(id);
+            const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+            const I = { mail: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7.5 8 6 8-6"/></svg>', instagram: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>', linkedin: '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11.5H3V9.75Zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.1v5.9h-4v-5.23c0-1.25-.02-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32h-4V9.75Z"/></svg>', whatsapp: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.1A8.5 8.5 0 1 1 21 11.5Z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2.2-1-.9.8c-.9-.4-1.9-1.4-2.3-2.3l.8-.9-1-2.2L9 8.5Z"/></svg>', link: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>', arrow: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>' };
+            const CHEV_L = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>', CHEV_R = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
+            const FALLBACK = [{ id: 'enteriva', name: 'Enteriva Advanced Nutritional Gel', category: 'Nutrition', status: 'New Launch', pack: '10 g single-serve sachet', description: 'A nutritional gel presented in a convenient single-serve sachet, featuring flaxseed, psyllium, and turmeric on the product label.', details: ['Pack size: 10 g single-serve sachet', 'Visible ingredients: flaxseed, psyllium, and turmeric', 'Product label includes dietary fibre and plant-based nutrition messaging'], images: ['assets/enteriva-product.jpeg'] }];
+            const configured = !!(CFG.supabaseUrl && CFG.supabaseAnonKey);
+            const root = $('pdRoot');
+            const waNum = String(CFG.whatsappNumber || '').replace(/\D/g, '');
+            const handle = u => { try { return '@' + new URL(u).pathname.split('/').filter(Boolean)[0] } catch (e) { return u } };
+            const host = u => { try { return new URL(u).hostname.replace(/^www\./, '') } catch (e) { return u } };
+            function waLink(text) { return 'https://wa.me/' + waNum + '?text=' + encodeURIComponent(text || '') }
+
+            /* footer links + whatsapp button */
+            (function () {
+                const c = [];
+                if (CFG.email) c.push({ icon: I.mail, label: 'Email', sub: CFG.email, href: 'mailto:' + CFG.email });
+                if (waNum) c.push({ icon: I.whatsapp, label: 'WhatsApp', sub: 'Chat with us', href: waLink(CFG.whatsappMessage), ext: 1 });
+                if (CFG.instagram) c.push({ icon: I.instagram, label: 'Instagram', sub: handle(CFG.instagram), href: CFG.instagram, ext: 1 });
+                if (CFG.linkedin) c.push({ icon: I.linkedin, label: 'LinkedIn', sub: 'Connect with us', href: CFG.linkedin, ext: 1 });
+                (CFG.extraLinks || []).forEach(l => { if (l && l.url) c.push({ icon: I.link, label: l.label || host(l.url), sub: host(l.url), href: l.url, ext: 1 }) });
+                $('footLinks').innerHTML = c.map(c => `<a class="foot-link" href="${esc(c.href)}"${c.ext ? ' target="_blank" rel="noopener noreferrer"' : ''}><span class="foot-icon">${c.icon}</span><span class="foot-text"><b>${esc(c.label)}</b><small>${esc(c.sub)}</small></span>${c.ext ? `<span class="foot-arrow">${I.arrow}</span>` : ''}</a>`).join('');
+                if (waNum) { const f = $('waFab'); f.href = waLink(CFG.whatsappMessage); f.hidden = false }
+                $('year').textContent = new Date().getFullYear();
+                $('menuBtn').addEventListener('click', () => $('mobileMenu').classList.toggle('open'));
+                document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => $('mobileMenu').classList.remove('open')));
+            })();
+
+            /* load product */
+            const id = new URLSearchParams(location.search).get('id') || '';
+            async function getProduct() {
+                if (!id) return { notFound: true };
+                if (!configured) { const p = FALLBACK.find(x => x.id === id); return p ? { p } : { notFound: true } }
+                try {
+                    const r = await fetch(CFG.supabaseUrl.replace(/\/$/, '') + '/rest/v1/products?select=*&id=eq.' + encodeURIComponent(id), { headers: Object.assign({ apikey: CFG.supabaseAnonKey }, String(CFG.supabaseAnonKey).startsWith('eyJ') ? { Authorization: 'Bearer ' + CFG.supabaseAnonKey } : {}) });
+                    if (r.status === 400) return { notFound: true }; if (!r.ok) throw new Error('HTTP ' + r.status);
+                    const a = await r.json(); if (!a.length) return { notFound: true }; const p = a[0]; return { p: { ...p, details: p.details || [], images: p.images || [] } }
+                }
+                catch (e) { console.warn(e); return { error: true } }
+            }
+
+            function showMessage(t) { root.innerHTML = `<div class="empty">${t} <a href="index.html#products" style="color:var(--green);font-weight:700">Back to all products →</a></div>` }
+
+            function show(p) {
+                document.title = p.name + ' | Nutrelle';
+                const md = document.querySelector('meta[name="description"]'); if (md) md.content = (p.description || '').slice(0, 155);
+                const imgs = p.images || [], many = imgs.length > 1; let idx = 0;
+                const gallery = imgs.length ? `<div class="pd-gallery"><div class="pd-stage" id="stage"><img id="mainImg" src="${esc(imgs[0])}" alt="${esc(p.name)} image 1">${many ? `<button type="button" class="pd-arrow prev" id="prevBtn" aria-label="Previous image">${CHEV_L}</button><button type="button" class="pd-arrow next" id="nextBtn" aria-label="Next image">${CHEV_R}</button><span class="pd-count" id="count" aria-live="polite"></span>` : ''}</div>${many ? `<div class="pd-thumbs" id="thumbs">${imgs.map((u, i) => `<button type="button" class="pd-thumb${i === 0 ? ' active' : ''}" data-i="${i}" aria-label="Show image ${i + 1}"><img src="${esc(u)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}</div>`
+                    : `<div class="pd-gallery"><div class="pd-stage"><div class="placeholder-art"><b>Nutrelle</b><small>PHOTO\nCOMING SOON</small></div></div></div>`;
+                const wa = waNum ? `<a class="btn outline" href="${esc(waLink('Hello Nutrelle, I would like to know more about ' + p.name + '.'))}" target="_blank" rel="noopener noreferrer">${I.whatsapp} WhatsApp us</a>` : '';
+                root.innerHTML = `<div class="pd-grid">${gallery}<div class="pd-info"><div class="pd-eyebrow">${esc(p.category)} · ${esc(p.status)}</div><h1 class="pd-title">${esc(p.name)}</h1>${p.pack ? `<span class="pd-pack">${esc(p.pack)}</span>` : ''}<div class="pd-block"><h2>Description</h2><p class="pd-text">${esc((p.description || '').trim())}</p></div>${p.details.length ? `<div class="pd-block"><h2>Specifications</h2><ul class="pd-specs">${p.details.map(d => `<li>${esc(d)}</li>`).join('')}</ul></div>` : ''}<div class="pd-cta"><a class="btn" href="index.html?product=${encodeURIComponent(p.name)}#contact">Ask about this product ↗</a>${wa}</div></div></div>`;
+                if (!many) return;
+                const img = $('mainImg'), count = $('count'), thumbs = $('thumbs'), stage = $('stage');
+                function go(n) { idx = (n + imgs.length) % imgs.length; img.classList.add('fade'); setTimeout(() => { img.src = imgs[idx]; img.alt = p.name + ' image ' + (idx + 1); img.classList.remove('fade') }, 120); count.textContent = (idx + 1) + ' / ' + imgs.length; thumbs.querySelectorAll('.pd-thumb').forEach((t, i) => { t.classList.toggle('active', i === idx); if (i === idx) t.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }) }) }
+                count.textContent = '1 / ' + imgs.length;
+                $('prevBtn').addEventListener('click', () => go(idx - 1)); $('nextBtn').addEventListener('click', () => go(idx + 1));
+                thumbs.addEventListener('click', e => { const b = e.target.closest('.pd-thumb'); if (b) go(+b.dataset.i) });
+                document.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') go(idx - 1); if (e.key === 'ArrowRight') go(idx + 1) });
+                let x0 = null, y0 = null;
+                stage.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY }, { passive: true });
+                stage.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null; if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.3) go(dx < 0 ? idx + 1 : idx - 1) }, { passive: true });
+                imgs.forEach(u => { const i = new Image(); i.src = u })
+            }
+
+            getProduct().then(r => { if (r.p) show(r.p); else if (r.error) showMessage('We could not load this product right now. Please try again in a moment.'); else showMessage('This product could not be found.') });
+        })();
+    </script>
+</body>
+
+</html>
